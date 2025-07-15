@@ -1,0 +1,102 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+ 
+  
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: #007bff;
+  }
+  
+  /* Session Cards Container */
+  .sessions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Individual Session Card */
+  .session-card {
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .session-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .session-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .session-card p {
+    margin-bottom: 0.3rem;
+  }
+  
+  .session-card a {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.95rem;
+  }
+  

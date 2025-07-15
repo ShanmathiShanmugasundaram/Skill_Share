@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post a Skill - Skill-Share Hub</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 800px;
+    }
+    .card {
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+    .card h5 {
+      color: #007bff;
+    }
+    .footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="text-center p-4 bg-primary text-white">
+    <h2>Post a Skill</h2>
+    <p>Share your knowledge and help others learn.</p>
+  </header>
+
+  <!-- Post Skill Form -->
+  <div class="container mt-4">
+    <form id="skillForm">
+      <div class="mb-3">
+        <label for="skillTitle" class="form-label">Skill Title</label>
+        <input type="text" class="form-control" id="skillTitle" placeholder="E.g., Learn Python Basics" required>
+      </div>
+      <div class="mb-3">
+        <label for="skillDesc" class="form-label">Description</label>
+        <textarea class="form-control" id="skillDesc" rows="3" placeholder="Briefly describe your skill..." required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="skillCategory" class="form-label">Category</label>
+        <select class="form-control" id="skillCategory" required>
+          <option value="">Select a category</option>
+          <option value="Coding">DSA Coding</option>
+          <option value="Design">Design</option>
+          <option value="Music">CS Fundamentals</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="skillPdf" class="form-label">Upload Supporting PDF (Optional)</label>
+        <input type="file" class="form-control" id="skillPdf" accept=".pdf">
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Post Skill</button>
+    </form>
+  </div>
+
+  <!-- Skills Display Section -->
+  <div class="container mt-5">
+    <h4 class="text-primary text-center">Skills Posted</h4>
+    <div class="row g-3" id="skillsList">
+      <!-- Dynamically added skills will appear here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Skill-Share Hub | Learn & Teach Together</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    document.getElementById("skillForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const title = document.getElementById("skillTitle").value;
+      const desc = document.getElementById("skillDesc").value;
+      const category = document.getElementById("skillCategory").value;
+      const fileInput = document.getElementById("skillPdf");
+
+      let pdfBase64 = "";
+
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        pdfBase64 = await toBase64(file);
+      }
+
+      const skill = { title, desc, category, pdf: pdfBase64 };
+      const allSkills = JSON.parse(localStorage.getItem("skills") || "[]");
+      allSkills.push(skill);
+      localStorage.setItem("skills", JSON.stringify(allSkills));
+
+      alert("Skill posted successfully!");
+      window.location.href = "skills.html";
+    });
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+      });
+    }
+  </script>
+</body>
+</html>

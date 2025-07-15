@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Skill-Share Hub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .feature-card {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+        .feature-card h5 {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .rating {
+            color: #f1c40f;
+        }
+        header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+        .footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #ffaa00;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    font-size: 14px;
+}
+.footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skill-Share Hub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+    <!-- Header -->
+     <br><center>
+        <h2 >Student Reviews</h2>
+        <p>See what our users say about Skill-Share Hub!</p>
+    </center>
+
+    <!-- Reviews Section -->
+    <div class="container mt-4">
+        <h4 class="text-center mb-4 text-primary">User Testimonials</h4>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h5>🌟 Varun Prasath<span class="rating">★★★★★</span></h5>
+                    <p>"This platform helped me learn Python from a fellow student! Great experience!"</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h5>🌟 Suhash<span class="rating">★★★★☆</span></h5>
+                    <p>"The community is supportive, and I found a mentor to improve my design skills."</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h5>🌟Shanmathi <span class="rating">★★★★★</span></h5>
+                    <p>"Amazing! I was able to teach JavaScript to beginners and also learn graphic design."</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h5>🌟 Sitha <span class="rating">★★★★☆</span></h5>
+                    <p>"The chat feature made communication easy! A great place for skill sharing."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="footer">
+        <p><center>© 2025 Skill-Share Hub | Learn & Teach Together</center></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
